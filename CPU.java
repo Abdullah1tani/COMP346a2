@@ -1,11 +1,11 @@
 
 public class CPU {
 	private int utilization;
-	private Processor running;
+	private Process running;
 	
 	public CPU() {
 		this.utilization = 0;
-		this.running = new Processor();
+		this.running = new Process();
 	}
 	
 	/**
@@ -13,7 +13,7 @@ public class CPU {
 	 * @param utilization
 	 * @param running
 	 */
-	public CPU(int utilization, Processor running) {
+	public CPU(int utilization, Process running) {
 		this.utilization = utilization;
 		this.running = running;
 	}
@@ -30,7 +30,7 @@ public class CPU {
 	 * mutator method for running
 	 * @param running
 	 */
-	public void setRunning(Processor running) {
+	public void setRunning(Process running) {
 		this.running = running;
 	}
 	
@@ -46,7 +46,7 @@ public class CPU {
 	 * accessor method for running
 	 * @return running
 	 */
-	public Processor getRunning() {
+	public Process getRunning() {
 		return running;
 	}
 	
