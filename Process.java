@@ -6,6 +6,7 @@ public class Process {
     private int totalExecTime;
     private int arrivalTime;
     private int waitTime;
+    private int responseTime;
     private int turnaroundTime;
     private int programCounter;
     private int ioTimeRequest;
@@ -19,8 +20,7 @@ public class Process {
         RUNNING,
         WAITING,
         TERMINATED
-    }
-    
+    }  
     
     /**
      * processor default constructor
@@ -32,9 +32,10 @@ public class Process {
         this.state = ProcessState.NEW;
         this.programCounter = 0;
         this.ioTimeRequest = 0;
-        this.turnaroundTime = -1;
-        this.waitTime = -1;
-        this.arrivalTime = -1;
+        this.turnaroundTime = 0;
+        this.waitTime = 0;
+        this.arrivalTime = 0;
+        this.responseTime = 0;
     }
       
     /**
@@ -101,6 +102,14 @@ public class Process {
     	this.arrivalTime = arrivalTime;
     }
     
+    /**
+     * mutator method to set the response time
+     * @param responseTime
+     */
+    public void setResponseTime(int responseTime) {
+    	this.responseTime = responseTime;
+    }
+    
     // getters for Processor ===============================================================================
     
     /**
@@ -143,7 +152,6 @@ public class Process {
         return turnaroundTime;
     }
     
-    
     /**
      * accessor method to get the ioRequestAtTimes array list
      * @return the ioRequestAtTimes array list
@@ -174,6 +182,14 @@ public class Process {
      */
     public int getIoTimeRequest() {
         return ioTimeRequest;
+    }
+    
+    /**
+     * accessor method to get the response time
+     * @return response time
+     */
+    public int getResponseTime() {
+    	return responseTime;
     }
     
     // add ioRequest to ioRequestAtTimes 
