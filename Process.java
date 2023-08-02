@@ -27,7 +27,7 @@ public class Process {
      */
     public Process() {
         this.ioRequestAtTimes = new ArrayList<>();
-        this.processID = 0;
+        this.processID = -1;
         this.totalExecTime = 0;
         this.state = ProcessState.NEW;
         this.programCounter = 0;
@@ -108,6 +108,14 @@ public class Process {
      */
     public void setResponseTime(int responseTime) {
     	this.responseTime = responseTime;
+    }
+    
+    /**
+     * mutator method to set the total execution time 
+     * @param totalExecTime
+     */
+    public void setTotalExecTime(int totalExecTime) {
+    	this.totalExecTime = totalExecTime;
     }
     
     // getters for Processor ===============================================================================
@@ -193,7 +201,7 @@ public class Process {
     }
     
     // add ioRequest to ioRequestAtTimes 
-    public void addIoRequestAtInstruction(int ioRequest){
+    public void addIoRequestAtTimes(int ioRequest){
     	ioRequestAtTimes.add(ioRequest);
     }
     
