@@ -1,11 +1,15 @@
 
 public class CPU {
+	private int cpuId;
 	private int utilization;
 	private Process running;
+	private static int CPUsCounter = 1; 
 	
 	public CPU() {
 		this.utilization = 0;
 		this.running = new Process();
+		this.cpuId = CPUsCounter;
+		CPUsCounter++;
 	}
 	
 	/**
@@ -16,6 +20,8 @@ public class CPU {
 	public CPU(int utilization, Process running) {
 		this.utilization = utilization;
 		this.running = running;
+		this.cpuId = CPUsCounter;
+		CPUsCounter++;
 	}
 	
 	/**
@@ -27,11 +33,27 @@ public class CPU {
 	}
 	
 	/**
+	 * mutator method to set the CPUsCounter
+	 * @param counter
+	 */
+	public void setCPUsCounter(int counter) {
+		CPUsCounter = counter;
+	}
+	
+	/**
 	 * mutator method for running
 	 * @param running
 	 */
 	public void setRunning(Process running) {
 		this.running = running;
+	}
+	
+	/**
+	 * accessor method for cpuId
+	 * @return cpuId
+	 */
+	public int getCpuId() {
+		return this.cpuId;
 	}
 	
 	/**
@@ -43,6 +65,14 @@ public class CPU {
 	}
 	
 	/**
+	 * accessor method for CPUsCounter
+	 * @return CPUs counter
+	 */
+	public int getCPUsCounter()	{
+		return CPUsCounter;
+	}
+	
+	/**
 	 * accessor method for running
 	 * @return running
 	 */
@@ -50,7 +80,15 @@ public class CPU {
 		return running;
 	}
 	
-	public String toString() {
-		return "utilization: " + utilization + "\nProcess id Running: " + running.getProcessID();
+	public String toString() 
+	{
+		if(running.getProcessID() == -1)
+		{
+			return "CPU ID : " + cpuId + "\nProcess id Running: NONE";
+		}
+		else 
+		{
+			return "CPU ID : " + cpuId + "\nProcess id Running: " + running.getProcessID();
+		}
 	}
 }

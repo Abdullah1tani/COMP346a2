@@ -206,12 +206,7 @@ public class Process {
     }
     
     public String toString()
-    {
-    	// generate random numbers for the registers values
-        Random random = new Random(); 
-        int register1 = random.nextInt(500 - 1 + 1) + 1;
-        int register2 = random.nextInt(500 - 1 + 1) + 1;
-        
-        return "Process ID: " + processID + "\nProgram Counter: " + programCounter + "\nState: " + state + "\nRegister 1: " + register1 + "\nRegister 2: " + register2;
+    {        
+        return "Process ID: " + processID + "\nProgram Counter: " + programCounter + "\nState: " + state;
     }
 }
