@@ -1,10 +1,14 @@
+package COMP346a2;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.CollationElementIterator;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Driver {
 
@@ -124,7 +128,11 @@ public class Driver {
         		readyQueue.remove(0);
         	}
         }
-       //printSampleRun(timeUnit, CPUs, readyQueue, io, processes);        	
+       //printSampleRun(timeUnit, CPUs, readyQueue, io, processes);
+
+
+        Collections.sort(processesInProgram, (p1, p2) -> p1.getTotalExecTime() - p2.getTotalExecTime());
+
         // start running the program
         while (processesInProgram.size() > 0) 
         {              	
@@ -135,26 +143,49 @@ public class Driver {
         			processesInProgram.get(i).setState(READY);
         		}
         	}
+
+            //(SJB)  sorting the ready queue based on the total execution time for SJB
+            Collections.sort(readyQueue, (p1,p2) -> p1.getTotalExecTime() - p2.getTotalExecTime());
+
+
+
+
         	
-        	// terminate process if program counter is the same as number of instructions
-        	for(int i =0; i < CPUs.size(); i++) {
-                if(CPUs.get(i).getRunning().getProgramCounter() == CPUs.get(i).getRunning().getTotalExecTime())
-                {
-                	CPUs.get(i).getRunning().setState(TERMINATED);
-                    processesInProgram.remove(CPUs.get(i).getRunning());
-                    CPUs.get(i).setRunning(new Process());
-                }
-        	}
-        	
-        	// add the processes in the readyQueue to the CPUs
+        	// add the processes in the readyQueue to the CPUs (added RR scheduling)
         	for(int i= 0; i < CPUs.size(); i++) {
         		// if a CPU is idle and the ready queue is not empty then add a process to that CPU and remove it from the ready queue
         		if(CPUs.get(i).getRunning().getProcessID() == -1 && readyQueue.size() > 0) {
+//                    Process nextProcess = readyQueue.get(0);
         			CPUs.get(i).setRunning(readyQueue.get(0));
         			readyQueue.get(0).setState(RUNNING);
         			readyQueue.remove(0);
         		}
+
+                // If a CPU has a running process and the process has used up the quantum time (q), move it to the end of the ready queue
+                if (CPUs.get(i).getRunning().getProcessID() != -1 && CPUs.get(i).getUtilization() == q) {
+                    Process currentProcess = CPUs.get(i).getRunning();
+                    currentProcess.setState(READY);
+                    readyQueue.add(currentProcess);
+                    CPUs.get(i).setRunning(new Process());
+                }
+
+                // Increment CPU utilization for the running process
+                if (CPUs.get(i).getRunning().getProcessID() != -1) {
+                    CPUs.get(i).setUtilization(CPUs.get(i).getUtilization() + 1);
+                }
         	}
+
+
+
+            // terminate process if program counter is the same as number of instructions
+            for(int i =0; i < CPUs.size(); i++) {
+                if(CPUs.get(i).getRunning().getProgramCounter() == CPUs.get(i).getRunning().getTotalExecTime())
+                {
+                    CPUs.get(i).getRunning().setState(TERMINATED);
+                    processesInProgram.remove(CPUs.get(i).getRunning());
+                    CPUs.get(i).setRunning(new Process());
+                }
+            }
         	
         	printSampleRun(timeUnit, CPUs, readyQueue, io, processes);
         	

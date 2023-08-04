@@ -1,3 +1,4 @@
+package COMP346a2;
 
 public class CPU {
 	private int cpuId;
