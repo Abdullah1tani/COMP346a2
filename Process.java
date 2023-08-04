@@ -76,7 +76,7 @@ public class Process {
      * mutator method to set the io time request
      * @param ioTimeRequest
      */
-    public void setTimeRequest(int ioTimeRequest){
+    public void setIoTimeRequest(int ioTimeRequest){
     	this.ioTimeRequest = ioTimeRequest;
     }
     
@@ -205,6 +205,11 @@ public class Process {
     // add ioRequest to ioRequestAtTimes 
     public void addIoRequestAtTimes(int ioRequest){
     	ioRequestAtTimes.add(ioRequest);
+    }
+    
+    // remove ioRequest from ioRequestAtTimes
+    public void removeIoRequestAtTimes(int ioRequest){
+    	ioRequestAtTimes.remove(ioRequest);
     }
     
     public String toString()

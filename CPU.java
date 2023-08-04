@@ -2,7 +2,7 @@ package COMP346a2;
 
 public class CPU {
 	private int cpuId;
-	private int utilization;
+	private double utilization;
 	private Process running;
 	private static int CPUsCounter = 1; 
 	
@@ -18,7 +18,7 @@ public class CPU {
 	 * @param utilization
 	 * @param running
 	 */
-	public CPU(int utilization, Process running) {
+	public CPU(double utilization, Process running) {
 		this.utilization = utilization;
 		this.running = running;
 		this.cpuId = CPUsCounter;
@@ -29,7 +29,7 @@ public class CPU {
 	 * mutator method for utilization
 	 * @param utilization
 	 */
-	public void setUtilization(int utilization){
+	public void setUtilization(double utilization){
 		this.utilization = utilization;
 	}
 	
@@ -61,7 +61,7 @@ public class CPU {
 	 * acessor method for utilization
 	 * @return utilization
 	 */
-	public int getUtilization() {
+	public double getUtilization() {
 		return utilization;
 	}
 	
