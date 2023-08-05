@@ -1,0 +1,754 @@
+******************* System Informations *******************
+Time unit: 0
+
+CPU ID : 1
+Process id Running: 0
+
+CPU ID : 2
+Process id Running: NONE
+
+Ready Queue: [] 
+IO: []
+
+====================== Processes PCB ======================
+Process ID: 0
+Program Counter: 0
+State: RUNNING
+
+Process ID: 1
+Program Counter: 0
+State: NEW
+
+Process ID: 2
+Program Counter: 0
+State: NEW
+
+Process ID: 3
+Program Counter: 0
+State: NEW
+
+******************* System Informations *******************
+Time unit: 1
+
+CPU ID : 1
+Process id Running: 0
+
+CPU ID : 2
+Process id Running: NONE
+
+Ready Queue: [] 
+IO: []
+
+====================== Processes PCB ======================
+Process ID: 0
+Program Counter: 1
+State: RUNNING
+
+Process ID: 1
+Program Counter: 0
+State: NEW
+
+Process ID: 2
+Program Counter: 0
+State: NEW
+
+Process ID: 3
+Program Counter: 0
+State: NEW
+
+******************* System Informations *******************
+Time unit: 2
+
+CPU ID : 1
+Process id Running: 0
+
+CPU ID : 2
+Process id Running: 1
+
+Ready Queue: [3] 
+IO: []
+
+====================== Processes PCB ======================
+Process ID: 0
+Program Counter: 2
+State: RUNNING
+
+Process ID: 1
+Program Counter: 0
+State: RUNNING
+
+Process ID: 2
+Program Counter: 0
+State: NEW
+
+Process ID: 3
+Program Counter: 0
+State: READY
+
+******************* System Informations *******************
+Time unit: 3
+
+CPU ID : 1
+Process id Running: 3
+
+CPU ID : 2
+Process id Running: 1
+
+Ready Queue: [] 
+IO: [0]
+
+====================== Processes PCB ======================
+Process ID: 0
+Program Counter: 2
+State: WAITING
+
+Process ID: 1
+Program Counter: 1
+State: RUNNING
+
+Process ID: 2
+Program Counter: 0
+State: NEW
+
+Process ID: 3
+Program Counter: 0
+State: RUNNING
+
+******************* System Informations *******************
+Time unit: 4
+
+CPU ID : 1
+Process id Running: NONE
+
+CPU ID : 2
+Process id Running: 1
+
+Ready Queue: [] 
+IO: [0, 3]
+
+====================== Processes PCB ======================
+Process ID: 0
+Program Counter: 2
+State: WAITING
+
+Process ID: 1
+Program Counter: 2
+State: RUNNING
+
+Process ID: 2
+Program Counter: 0
+State: NEW
+
+Process ID: 3
+Program Counter: 0
+State: WAITING
+
+******************* System Informations *******************
+Time unit: 5
+
+CPU ID : 1
+Process id Running: 0
+
+CPU ID : 2
+Process id Running: 1
+
+Ready Queue: [] 
+IO: [3]
+
+====================== Processes PCB ======================
+Process ID: 0
+Program Counter: 3
+State: RUNNING
+
+Process ID: 1
+Program Counter: 3
+State: RUNNING
+
+Process ID: 2
+Program Counter: 0
+State: NEW
+
+Process ID: 3
+Program Counter: 0
+State: WAITING
+
+******************* System Informations *******************
+Time unit: 6
+
+CPU ID : 1
+Process id Running: 0
+
+CPU ID : 2
+Process id Running: NONE
+
+Ready Queue: [] 
+IO: [3]
+
+====================== Processes PCB ======================
+Process ID: 0
+Program Counter: 4
+State: RUNNING
+
+Process ID: 1
+Program Counter: 3
+State: TERMINATED
+
+Process ID: 2
+Program Counter: 0
+State: NEW
+
+Process ID: 3
+Program Counter: 0
+State: WAITING
+
+******************* System Informations *******************
+Time unit: 7
+
+CPU ID : 1
+Process id Running: 0
+
+CPU ID : 2
+Process id Running: 3
+
+Ready Queue: [] 
+IO: []
+
+====================== Processes PCB ======================
+Process ID: 0
+Program Counter: 5
+State: RUNNING
+
+Process ID: 1
+Program Counter: 3
+State: TERMINATED
+
+Process ID: 2
+Program Counter: 0
+State: NEW
+
+Process ID: 3
+Program Counter: 1
+State: RUNNING
+
+******************* System Informations *******************
+Time unit: 8
+
+CPU ID : 1
+Process id Running: NONE
+
+CPU ID : 2
+Process id Running: 3
+
+Ready Queue: [] 
+IO: [0]
+
+====================== Processes PCB ======================
+Process ID: 0
+Program Counter: 5
+State: WAITING
+
+Process ID: 1
+Program Counter: 3
+State: TERMINATED
+
+Process ID: 2
+Program Counter: 0
+State: NEW
+
+Process ID: 3
+Program Counter: 2
+State: RUNNING
+
+******************* System Informations *******************
+Time unit: 9
+
+CPU ID : 1
+Process id Running: NONE
+
+CPU ID : 2
+Process id Running: NONE
+
+Ready Queue: [] 
+IO: [0, 3]
+
+====================== Processes PCB ======================
+Process ID: 0
+Program Counter: 5
+State: WAITING
+
+Process ID: 1
+Program Counter: 3
+State: TERMINATED
+
+Process ID: 2
+Program Counter: 0
+State: NEW
+
+Process ID: 3
+Program Counter: 2
+State: WAITING
+
+******************* System Informations *******************
+Time unit: 10
+
+CPU ID : 1
+Process id Running: 2
+
+CPU ID : 2
+Process id Running: 0
+
+Ready Queue: [] 
+IO: [3]
+
+====================== Processes PCB ======================
+Process ID: 0
+Program Counter: 6
+State: RUNNING
+
+Process ID: 1
+Program Counter: 3
+State: TERMINATED
+
+Process ID: 2
+Program Counter: 0
+State: RUNNING
+
+Process ID: 3
+Program Counter: 2
+State: WAITING
+
+******************* System Informations *******************
+Time unit: 11
+
+CPU ID : 1
+Process id Running: 2
+
+CPU ID : 2
+Process id Running: 0
+
+Ready Queue: [] 
+IO: [3]
+
+====================== Processes PCB ======================
+Process ID: 0
+Program Counter: 7
+State: RUNNING
+
+Process ID: 1
+Program Counter: 3
+State: TERMINATED
+
+Process ID: 2
+Program Counter: 1
+State: RUNNING
+
+Process ID: 3
+Program Counter: 2
+State: WAITING
+
+******************* System Informations *******************
+Time unit: 12
+
+CPU ID : 1
+Process id Running: 3
+
+CPU ID : 2
+Process id Running: 0
+
+Ready Queue: [] 
+IO: [2]
+
+====================== Processes PCB ======================
+Process ID: 0
+Program Counter: 8
+State: RUNNING
+
+Process ID: 1
+Program Counter: 3
+State: TERMINATED
+
+Process ID: 2
+Program Counter: 1
+State: WAITING
+
+Process ID: 3
+Program Counter: 3
+State: RUNNING
+
+******************* System Informations *******************
+Time unit: 13
+
+CPU ID : 1
+Process id Running: NONE
+
+CPU ID : 2
+Process id Running: 0
+
+Ready Queue: [] 
+IO: [2, 3]
+
+====================== Processes PCB ======================
+Process ID: 0
+Program Counter: 9
+State: RUNNING
+
+Process ID: 1
+Program Counter: 3
+State: TERMINATED
+
+Process ID: 2
+Program Counter: 1
+State: WAITING
+
+Process ID: 3
+Program Counter: 3
+State: WAITING
+
+******************* System Informations *******************
+Time unit: 14
+
+CPU ID : 1
+Process id Running: 2
+
+CPU ID : 2
+Process id Running: 0
+
+Ready Queue: [] 
+IO: [3]
+
+====================== Processes PCB ======================
+Process ID: 0
+Program Counter: 10
+State: RUNNING
+
+Process ID: 1
+Program Counter: 3
+State: TERMINATED
+
+Process ID: 2
+Program Counter: 2
+State: RUNNING
+
+Process ID: 3
+Program Counter: 3
+State: WAITING
+
+******************* System Informations *******************
+Time unit: 15
+
+CPU ID : 1
+Process id Running: NONE
+
+CPU ID : 2
+Process id Running: NONE
+
+Ready Queue: [] 
+IO: [3, 2]
+
+====================== Processes PCB ======================
+Process ID: 0
+Program Counter: 10
+State: TERMINATED
+
+Process ID: 1
+Program Counter: 3
+State: TERMINATED
+
+Process ID: 2
+Program Counter: 2
+State: WAITING
+
+Process ID: 3
+Program Counter: 3
+State: WAITING
+
+******************* System Informations *******************
+Time unit: 16
+
+CPU ID : 1
+Process id Running: NONE
+
+CPU ID : 2
+Process id Running: NONE
+
+Ready Queue: [] 
+IO: [2]
+
+====================== Processes PCB ======================
+Process ID: 0
+Program Counter: 10
+State: TERMINATED
+
+Process ID: 1
+Program Counter: 3
+State: TERMINATED
+
+Process ID: 2
+Program Counter: 2
+State: WAITING
+
+Process ID: 3
+Program Counter: 3
+State: TERMINATED
+
+******************* System Informations *******************
+Time unit: 17
+
+CPU ID : 1
+Process id Running: NONE
+
+CPU ID : 2
+Process id Running: NONE
+
+Ready Queue: [] 
+IO: [2]
+
+====================== Processes PCB ======================
+Process ID: 0
+Program Counter: 10
+State: TERMINATED
+
+Process ID: 1
+Program Counter: 3
+State: TERMINATED
+
+Process ID: 2
+Program Counter: 2
+State: WAITING
+
+Process ID: 3
+Program Counter: 3
+State: TERMINATED
+
+******************* System Informations *******************
+Time unit: 18
+
+CPU ID : 1
+Process id Running: 2
+
+CPU ID : 2
+Process id Running: NONE
+
+Ready Queue: [] 
+IO: []
+
+====================== Processes PCB ======================
+Process ID: 0
+Program Counter: 10
+State: TERMINATED
+
+Process ID: 1
+Program Counter: 3
+State: TERMINATED
+
+Process ID: 2
+Program Counter: 3
+State: RUNNING
+
+Process ID: 3
+Program Counter: 3
+State: TERMINATED
+
+******************* System Informations *******************
+Time unit: 19
+
+CPU ID : 1
+Process id Running: NONE
+
+CPU ID : 2
+Process id Running: NONE
+
+Ready Queue: [] 
+IO: [2]
+
+====================== Processes PCB ======================
+Process ID: 0
+Program Counter: 10
+State: TERMINATED
+
+Process ID: 1
+Program Counter: 3
+State: TERMINATED
+
+Process ID: 2
+Program Counter: 3
+State: WAITING
+
+Process ID: 3
+Program Counter: 3
+State: TERMINATED
+
+******************* System Informations *******************
+Time unit: 20
+
+CPU ID : 1
+Process id Running: NONE
+
+CPU ID : 2
+Process id Running: NONE
+
+Ready Queue: [] 
+IO: [2]
+
+====================== Processes PCB ======================
+Process ID: 0
+Program Counter: 10
+State: TERMINATED
+
+Process ID: 1
+Program Counter: 3
+State: TERMINATED
+
+Process ID: 2
+Program Counter: 3
+State: WAITING
+
+Process ID: 3
+Program Counter: 3
+State: TERMINATED
+
+******************* System Informations *******************
+Time unit: 21
+
+CPU ID : 1
+Process id Running: 2
+
+CPU ID : 2
+Process id Running: NONE
+
+Ready Queue: [] 
+IO: []
+
+====================== Processes PCB ======================
+Process ID: 0
+Program Counter: 10
+State: TERMINATED
+
+Process ID: 1
+Program Counter: 3
+State: TERMINATED
+
+Process ID: 2
+Program Counter: 4
+State: RUNNING
+
+Process ID: 3
+Program Counter: 3
+State: TERMINATED
+
+******************* System Informations *******************
+Time unit: 22
+
+CPU ID : 1
+Process id Running: 2
+
+CPU ID : 2
+Process id Running: NONE
+
+Ready Queue: [] 
+IO: []
+
+====================== Processes PCB ======================
+Process ID: 0
+Program Counter: 10
+State: TERMINATED
+
+Process ID: 1
+Program Counter: 3
+State: TERMINATED
+
+Process ID: 2
+Program Counter: 5
+State: RUNNING
+
+Process ID: 3
+Program Counter: 3
+State: TERMINATED
+
+******************* System Informations *******************
+Time unit: 23
+
+CPU ID : 1
+Process id Running: 2
+
+CPU ID : 2
+Process id Running: NONE
+
+Ready Queue: [] 
+IO: []
+
+====================== Processes PCB ======================
+Process ID: 0
+Program Counter: 10
+State: TERMINATED
+
+Process ID: 1
+Program Counter: 3
+State: TERMINATED
+
+Process ID: 2
+Program Counter: 6
+State: RUNNING
+
+Process ID: 3
+Program Counter: 3
+State: TERMINATED
+
+******************* System Informations *******************
+Time unit: 24
+
+CPU ID : 1
+Process id Running: 2
+
+CPU ID : 2
+Process id Running: NONE
+
+Ready Queue: [] 
+IO: []
+
+====================== Processes PCB ======================
+Process ID: 0
+Program Counter: 10
+State: TERMINATED
+
+Process ID: 1
+Program Counter: 3
+State: TERMINATED
+
+Process ID: 2
+Program Counter: 7
+State: RUNNING
+
+Process ID: 3
+Program Counter: 3
+State: TERMINATED
+
+CPU 1 utilization : 64.0%
+CPU 2 utilization : 44.0%
+
+Process 0:
+----------
+Turnaround Time : 14
+Wait Time : 0
+Response Time : 0
+
+Process 1:
+----------
+Turnaround Time : 3
+Wait Time : 0
+Response Time : 0
+
+Process 2:
+----------
+Turnaround Time : 14
+Wait Time : 0
+Response Time : 0
+
+Process 3:
+----------
+Turnaround Time : 13
+Wait Time : 1
+Response Time : 1
+
+Average wait time : 0.25
+
