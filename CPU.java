@@ -3,6 +3,7 @@ package COMP346a2;
 public class CPU {
 	private int cpuId;
 	private double utilization;
+	private int q;
 	private Process running;
 	private static int CPUsCounter = 1; 
 	
@@ -22,6 +23,7 @@ public class CPU {
 		this.utilization = utilization;
 		this.running = running;
 		this.cpuId = CPUsCounter;
+		this.q = -1;
 		CPUsCounter++;
 	}
 	
@@ -48,6 +50,16 @@ public class CPU {
 	public void setRunning(Process running) {
 		this.running = running;
 	}
+	
+    /**
+     * mutator method to set the q
+     * @param q
+     */
+    public void setQ(int q) {
+    	this.q = q;
+    }
+    
+    // CPU getters ============================================================================
 	
 	/**
 	 * accessor method for cpuId
@@ -80,6 +92,14 @@ public class CPU {
 	public Process getRunning() {
 		return running;
 	}
+    
+    /**
+     * accessor method to get q
+     * @return q
+     */
+    public int getQ() {
+    	return q;
+    }
 	
 	public String toString() 
 	{

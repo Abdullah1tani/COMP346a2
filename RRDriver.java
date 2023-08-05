@@ -8,11 +8,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
-public class FCFSDriver {
+public class RRDriver {
 
 	public static void main(String[] args) {
 		 try {
-	            PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("samplerunFCFS.txt")));
+	            PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("samplerunRR.txt")));
 	            pw.close();
 		 }catch(IOException e) {
 			 System.out.println("Error: terminating program");
@@ -101,6 +101,10 @@ public class FCFSDriver {
         } catch (IOException e) {
         	System.out.println("Error: terminating program");
         	System.exit(0);
+        }
+        
+        for(int i = 0; i< CPUs.size(); i++) {
+        	CPUs.get(i).setQ(q);
         }
         
         int counter = readyQueue.size();
@@ -195,6 +199,7 @@ public class FCFSDriver {
         			
         			io.add(CPUs.get(i).getRunning()); // send process to io queue
         			CPUs.get(i).setRunning(new Process()); // remove the process from the CPU that was running it
+        			CPUs.get(i).setQ(q);
         		}
         	}
         	
@@ -206,7 +211,8 @@ public class FCFSDriver {
                 	CPUs.get(i).getRunning().setState(TERMINATED);
                 	CPUs.get(i).getRunning().setTurnAroundTime(timeUnit - CPUs.get(i).getRunning().getTurnaroundTime());
                     processesInProgram.remove(CPUs.get(i).getRunning());
-                    CPUs.get(i).setRunning(new Process());                
+                    CPUs.get(i).setRunning(new Process());     
+                    CPUs.get(i).setQ(q);
                 }
         	}
         	
@@ -214,13 +220,21 @@ public class FCFSDriver {
         	for(int i= 0; i < CPUs.size(); i++) {
         		if(CPUs.get(i).getRunning().getProcessID() != -1) {
         			CPUs.get(i).getRunning().setProgramCounter(CPUs.get(i).getRunning().getProgramCounter() + 1); // increase PC	
+        			CPUs.get(i).setQ(CPUs.get(i).getQ()-1);
+        			if(CPUs.get(i).getQ() == 0) {
+        				CPUs.get(i).getRunning().setState(READY);
+        				readyQueue.add(CPUs.get(i).getRunning());
+        				
+                        CPUs.get(i).setRunning(new Process());                
+                        CPUs.get(i).setQ(q);
+        			}
         		}
         	}
         	timeUnit++; // increase time unit
         }
         
         try {
-            PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("samplerunFCFS.txt", true)));
+            PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("samplerunRR.txt", true)));
             
             for(int i=0;i < CPUs.size(); i++) {
             	CPUs.get(i).setUtilization((CPUs.get(i).getUtilization()/timeUnit) * 100);
@@ -245,7 +259,7 @@ public class FCFSDriver {
 	}
         public static void printSampleRun(int timeUnit, ArrayList<CPU> CPUs, ArrayList<Process> readyQueue, ArrayList<Process> io, ArrayList<Process> processes) {
         	try {
-                PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("samplerunFCFS.txt", true)));
+                PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("samplerunRR.txt", true)));
 
                 pw.write("******************* System Informations *******************\n");
                 pw.write("Time unit: " + timeUnit + "\n\n");
