@@ -12,7 +12,7 @@ public class FCFSDriver {
 
 	public static void main(String[] args) {
 		 try {
-	            PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("samplerun.txt")));
+	            PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("samplerunFCFS.txt")));
 	            pw.close();
 		 }catch(IOException e) {
 			 System.out.println("Error: terminating program");
@@ -220,7 +220,7 @@ public class FCFSDriver {
         }
         
         try {
-            PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("samplerun.txt", true)));
+            PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("samplerunFCFS.txt", true)));
             
             for(int i=0;i < CPUs.size(); i++) {
             	CPUs.get(i).setUtilization((CPUs.get(i).getUtilization()/timeUnit) * 100);
@@ -245,39 +245,39 @@ public class FCFSDriver {
 	}
         public static void printSampleRun(int timeUnit, ArrayList<CPU> CPUs, ArrayList<Process> readyQueue, ArrayList<Process> io, ArrayList<Process> processes) {
         	try {
-                PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("samplerun.txt", true)));
+                PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("samplerunFCFS.txt", true)));
 
-                System.out.print("******************* System Informations *******************\n");
-                System.out.print("Time unit: " + timeUnit + "\n\n");
+                pw.write("******************* System Informations *******************\n");
+                pw.write("Time unit: " + timeUnit + "\n\n");
                 
                 for(int i =0; i < CPUs.size(); i++) 
                 {  	
-                	System.out.print(CPUs.get(i).toString());
-                	System.out.print("\n\n");
+                	pw.write(CPUs.get(i).toString());
+                	pw.write("\n\n");
                 }            
 
-                System.out.print("Ready Queue: [");
+                pw.write("Ready Queue: [");
                 
                 for(int i =0; i < readyQueue.size(); i++) 
                 {  	
-                	System.out.print(readyQueue.get(i).getProcessID());
+                	pw.write(readyQueue.get(i).getProcessID());
                 	if(i != readyQueue.size() -1) {
-                 		System.out.print(", ");
+                 		pw.write(", ");
                  	}
                 }   
 
-                System.out.print("] \nIO: [");
+                pw.write("] \nIO: [");
                 for(int i = 0; i < io.size(); i++)
                 {
-               	 System.out.print(Integer.toString(io.get(i).getProcessID()));
+               	 pw.write(Integer.toString(io.get(i).getProcessID()));
                 	if(i != io.size() -1) {
-                		System.out.print(", ");
+                		pw.write(", ");
                 	}
                 }
                 
-                System.out.print("]\n\n====================== Processes PCB ======================\n");                
+                pw.write("]\n\n====================== Processes PCB ======================\n");                
                 for(int i = 0; i < processes.size(); i++){
-               	 System.out.print(processes.get(i).toString() + "\n\n");
+               	 pw.write(processes.get(i).toString() + "\n\n");
                 }          
                 
                 pw.close();

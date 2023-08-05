@@ -14,7 +14,7 @@ public class SJFDriver {
 
 	public static void main(String[] args) {
 		 try {
-	            PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("samplerun.txt")));
+	            PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("samplerunSJF.txt")));
 	            pw.close();
 		 }catch(IOException e) {
 			 System.out.println("Error: terminating program");
@@ -231,7 +231,7 @@ public class SJFDriver {
         }
         
         try {
-            PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("samplerun.txt", true)));
+            PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("samplerunSJF.txt", true)));
             
             for(int i=0;i < CPUs.size(); i++) {
             	CPUs.get(i).setUtilization((CPUs.get(i).getUtilization()/timeUnit) * 100);
@@ -256,7 +256,7 @@ public class SJFDriver {
 	}
         public static void printSampleRun(int timeUnit, ArrayList<CPU> CPUs, ArrayList<Process> readyQueue, ArrayList<Process> io, ArrayList<Process> processes) {
         	try {
-                PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("samplerun.txt", true)));
+                PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("samplerunSJF.txt", true)));
 
                 pw.write("******************* System Informations *******************\n");
                 pw.write("Time unit: " + timeUnit + "\n\n");
