@@ -7,8 +7,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
-public class FCFSDriver {
+public class SJFDriver {
 
 	public static void main(String[] args) {
 		 try {
@@ -94,8 +96,10 @@ public class FCFSDriver {
                 processesInProgram.add(process);
                 if(process.getArrivalTime() == 0)
                 {
+                	
                 	readyQueue.add(process);
                 	process.setState(READY);
+
                 }
             }
         } catch (IOException e) {
@@ -103,6 +107,12 @@ public class FCFSDriver {
         	System.exit(0);
         }
         
+        // compare total execution time of each process
+        Comparator<Process> totalExecTimeComparator = Comparator.comparingInt(Process::getTotalExecTime);
+        
+        // sort ready queue with shortest total execution time first
+        Collections.sort(readyQueue, totalExecTimeComparator);
+         
         int counter = readyQueue.size();
         
         if(CPUs.size() > counter) // if CPUs size bigger than processes size
@@ -134,7 +144,7 @@ public class FCFSDriver {
 
         // start running the program
         while (processesInProgram.size() > 0) 
-        {              	
+        {        
         	// add all the processes that arrive at the current time unit to the ready queue
         	for(int i = 0; i < processesInProgram.size(); i++) {
         		if(processesInProgram.get(i).getArrivalTime() == timeUnit && processesInProgram.get(i).getState() == NEW) {
@@ -143,6 +153,9 @@ public class FCFSDriver {
         			processesInProgram.get(i).setTurnAroundTime(timeUnit);
         		}
         	}
+        	
+        	// sort ready queue with shortest total execution time first
+            Collections.sort(readyQueue, totalExecTimeComparator);
         	
         	// add the processes in the readyQueue to the CPUs
         	for(int i= 0; i < CPUs.size(); i++) {
@@ -186,7 +199,6 @@ public class FCFSDriver {
         		if(CPUs.get(i).getRunning().getProcessID() != -1) { // if a CPU is running a process increase CPU utilization by 1
         			CPUs.get(i).setUtilization(CPUs.get(i).getUtilization() + 1);
         		}
-        		
         		//check for IO
         		if(CPUs.get(i).getRunning().getIoRequestAtTimes().size() > 0 && CPUs.get(i).getRunning().getProgramCounter() == CPUs.get(i).getRunning().getIoRequestAtTimes().get(0)) {
         			CPUs.get(i).getRunning().getIoRequestAtTimes().remove(0);
@@ -198,7 +210,6 @@ public class FCFSDriver {
         		}
         	}
         	
-        	
         	// terminate process if program counter is the same as number of instructions
         	for(int i =0; i < CPUs.size(); i++) {
                 if(CPUs.get(i).getRunning().getProcessID() !=-1 && CPUs.get(i).getRunning().getProgramCounter() == CPUs.get(i).getRunning().getTotalExecTime())
@@ -206,14 +217,14 @@ public class FCFSDriver {
                 	CPUs.get(i).getRunning().setState(TERMINATED);
                 	CPUs.get(i).getRunning().setTurnAroundTime(timeUnit - CPUs.get(i).getRunning().getTurnaroundTime());
                     processesInProgram.remove(CPUs.get(i).getRunning());
-                    CPUs.get(i).setRunning(new Process());                
+                    CPUs.get(i).setRunning(new Process());     
                 }
         	}
         	
         	// increase program counter for each process running in a CPU
         	for(int i= 0; i < CPUs.size(); i++) {
         		if(CPUs.get(i).getRunning().getProcessID() != -1) {
-        			CPUs.get(i).getRunning().setProgramCounter(CPUs.get(i).getRunning().getProgramCounter() + 1); // increase PC	
+        			CPUs.get(i).getRunning().setProgramCounter(CPUs.get(i).getRunning().getProgramCounter() + 1); // increase PC
         		}
         	}
         	timeUnit++; // increase time unit
@@ -247,37 +258,37 @@ public class FCFSDriver {
         	try {
                 PrintWriter pw = new PrintWriter(new BufferedWriter(new FileWriter("samplerun.txt", true)));
 
-                System.out.print("******************* System Informations *******************\n");
-                System.out.print("Time unit: " + timeUnit + "\n\n");
+                pw.write("******************* System Informations *******************\n");
+                pw.write("Time unit: " + timeUnit + "\n\n");
                 
                 for(int i =0; i < CPUs.size(); i++) 
                 {  	
-                	System.out.print(CPUs.get(i).toString());
-                	System.out.print("\n\n");
+                	pw.write(CPUs.get(i).toString());
+                	pw.write("\n\n");
                 }            
 
-                System.out.print("Ready Queue: [");
+                pw.write("Ready Queue: [");
                 
                 for(int i =0; i < readyQueue.size(); i++) 
                 {  	
-                	System.out.print(readyQueue.get(i).getProcessID());
+                	pw.write(Integer.toString(readyQueue.get(i).getProcessID()));
                 	if(i != readyQueue.size() -1) {
-                 		System.out.print(", ");
+                 		pw.write(", ");
                  	}
                 }   
 
-                System.out.print("] \nIO: [");
+                pw.write("] \nIO: [");
                 for(int i = 0; i < io.size(); i++)
                 {
-               	 System.out.print(Integer.toString(io.get(i).getProcessID()));
+               	 pw.write(Integer.toString(io.get(i).getProcessID()));
                 	if(i != io.size() -1) {
-                		System.out.print(", ");
+                		pw.write(", ");
                 	}
                 }
                 
-                System.out.print("]\n\n====================== Processes PCB ======================\n");                
+                pw.write("]\n\n====================== Processes PCB ======================\n");                
                 for(int i = 0; i < processes.size(); i++){
-               	 System.out.print(processes.get(i).toString() + "\n\n");
+               	 pw.write(processes.get(i).toString() + "\n\n");
                 }          
                 
                 pw.close();
