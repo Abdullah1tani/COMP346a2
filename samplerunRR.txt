@@ -7,7 +7,7 @@ Process id Running: 0
 Ready Queue: [] 
 IO: []
 
-====================== Processes PCB ======================
+======================== Processes ========================
 Process ID: 0
 Program Counter: 0
 State: RUNNING
@@ -29,7 +29,7 @@ Process id Running: 0
 Ready Queue: [] 
 IO: []
 
-====================== Processes PCB ======================
+======================== Processes ========================
 Process ID: 0
 Program Counter: 1
 State: RUNNING
@@ -51,7 +51,7 @@ Process id Running: 0
 Ready Queue: [1] 
 IO: []
 
-====================== Processes PCB ======================
+======================== Processes ========================
 Process ID: 0
 Program Counter: 2
 State: RUNNING
@@ -73,7 +73,7 @@ Process id Running: 0
 Ready Queue: [1] 
 IO: []
 
-====================== Processes PCB ======================
+======================== Processes ========================
 Process ID: 0
 Program Counter: 3
 State: RUNNING
@@ -95,7 +95,7 @@ Process id Running: 1
 Ready Queue: [0] 
 IO: []
 
-====================== Processes PCB ======================
+======================== Processes ========================
 Process ID: 0
 Program Counter: 4
 State: READY
@@ -117,7 +117,7 @@ Process id Running: 1
 Ready Queue: [0] 
 IO: []
 
-====================== Processes PCB ======================
+======================== Processes ========================
 Process ID: 0
 Program Counter: 4
 State: READY
@@ -139,7 +139,7 @@ Process id Running: 0
 Ready Queue: [1] 
 IO: []
 
-====================== Processes PCB ======================
+======================== Processes ========================
 Process ID: 0
 Program Counter: 4
 State: RUNNING
@@ -161,7 +161,7 @@ Process id Running: 0
 Ready Queue: [1] 
 IO: []
 
-====================== Processes PCB ======================
+======================== Processes ========================
 Process ID: 0
 Program Counter: 5
 State: RUNNING
@@ -183,7 +183,7 @@ Process id Running: 1
 Ready Queue: [] 
 IO: [0]
 
-====================== Processes PCB ======================
+======================== Processes ========================
 Process ID: 0
 Program Counter: 5
 State: WAITING
@@ -205,7 +205,7 @@ Process id Running: 1
 Ready Queue: [] 
 IO: [0]
 
-====================== Processes PCB ======================
+======================== Processes ========================
 Process ID: 0
 Program Counter: 5
 State: WAITING
@@ -227,7 +227,7 @@ Process id Running: 0
 Ready Queue: [2] 
 IO: []
 
-====================== Processes PCB ======================
+======================== Processes ========================
 Process ID: 0
 Program Counter: 6
 State: RUNNING
@@ -249,7 +249,7 @@ Process id Running: 0
 Ready Queue: [2] 
 IO: []
 
-====================== Processes PCB ======================
+======================== Processes ========================
 Process ID: 0
 Program Counter: 7
 State: RUNNING
@@ -271,7 +271,7 @@ Process id Running: 2
 Ready Queue: [0] 
 IO: []
 
-====================== Processes PCB ======================
+======================== Processes ========================
 Process ID: 0
 Program Counter: 8
 State: READY
@@ -293,7 +293,7 @@ Process id Running: 2
 Ready Queue: [0] 
 IO: []
 
-====================== Processes PCB ======================
+======================== Processes ========================
 Process ID: 0
 Program Counter: 8
 State: READY
@@ -315,7 +315,7 @@ Process id Running: 0
 Ready Queue: [] 
 IO: [2]
 
-====================== Processes PCB ======================
+======================== Processes ========================
 Process ID: 0
 Program Counter: 8
 State: RUNNING
@@ -337,7 +337,7 @@ Process id Running: NONE
 Ready Queue: [] 
 IO: [2, 0]
 
-====================== Processes PCB ======================
+======================== Processes ========================
 Process ID: 0
 Program Counter: 8
 State: WAITING
@@ -359,7 +359,7 @@ Process id Running: 2
 Ready Queue: [] 
 IO: [0]
 
-====================== Processes PCB ======================
+======================== Processes ========================
 Process ID: 0
 Program Counter: 8
 State: WAITING
@@ -381,7 +381,7 @@ Process id Running: NONE
 Ready Queue: [] 
 IO: [0, 2]
 
-====================== Processes PCB ======================
+======================== Processes ========================
 Process ID: 0
 Program Counter: 8
 State: WAITING
@@ -403,7 +403,7 @@ Process id Running: 0
 Ready Queue: [] 
 IO: [2]
 
-====================== Processes PCB ======================
+======================== Processes ========================
 Process ID: 0
 Program Counter: 9
 State: RUNNING
@@ -425,7 +425,7 @@ Process id Running: 0
 Ready Queue: [] 
 IO: [2]
 
-====================== Processes PCB ======================
+======================== Processes ========================
 Process ID: 0
 Program Counter: 10
 State: RUNNING
@@ -447,7 +447,7 @@ Process id Running: 2
 Ready Queue: [] 
 IO: []
 
-====================== Processes PCB ======================
+======================== Processes ========================
 Process ID: 0
 Program Counter: 10
 State: TERMINATED
@@ -469,7 +469,7 @@ Process id Running: NONE
 Ready Queue: [] 
 IO: [2]
 
-====================== Processes PCB ======================
+======================== Processes ========================
 Process ID: 0
 Program Counter: 10
 State: TERMINATED
@@ -491,7 +491,7 @@ Process id Running: NONE
 Ready Queue: [] 
 IO: [2]
 
-====================== Processes PCB ======================
+======================== Processes ========================
 Process ID: 0
 Program Counter: 10
 State: TERMINATED
@@ -513,7 +513,7 @@ Process id Running: 2
 Ready Queue: [] 
 IO: []
 
-====================== Processes PCB ======================
+======================== Processes ========================
 Process ID: 0
 Program Counter: 10
 State: TERMINATED
@@ -535,7 +535,7 @@ Process id Running: 2
 Ready Queue: [] 
 IO: []
 
-====================== Processes PCB ======================
+======================== Processes ========================
 Process ID: 0
 Program Counter: 10
 State: TERMINATED
@@ -557,7 +557,7 @@ Process id Running: 2
 Ready Queue: [] 
 IO: []
 
-====================== Processes PCB ======================
+======================== Processes ========================
 Process ID: 0
 Program Counter: 10
 State: TERMINATED
@@ -579,7 +579,7 @@ Process id Running: 2
 Ready Queue: [] 
 IO: []
 
-====================== Processes PCB ======================
+======================== Processes ========================
 Process ID: 0
 Program Counter: 10
 State: TERMINATED
