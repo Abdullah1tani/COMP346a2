@@ -275,7 +275,7 @@ public class FCFSDriver {
                 	}
                 }
                 
-                pw.write("]\n\n====================== Processes PCB ======================\n");                
+                pw.write("]\n\n======================== Processes ========================\n");                
                 for(int i = 0; i < processes.size(); i++){
                	 pw.write(processes.get(i).toString() + "\n\n");
                 }          
